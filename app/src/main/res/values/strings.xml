@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">TextSelection</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="sample_text">A LayoutManager is responsible for measuring and positioning item views within a RecyclerView as well as determining the policy for when to recycle item views that are no longer visible to the user. By changing the LayoutManager a RecyclerView can be used to implement a standard vertically scrolling list, a uniform grid, staggered grids, horizontally scrolling collections and more. Several stock layout managers are provided for general use.
+
+If the LayoutManager specifies a default constructor or one with the signature (Context, AttributeSet, int, int), RecyclerView will instantiate and set the LayoutManager when being inflated. Most used properties can be then obtained from getProperties(Context, AttributeSet, int, int). In case a LayoutManager specifies both constructors, the non-default constructor will take precedence.</string>
+</resources>
