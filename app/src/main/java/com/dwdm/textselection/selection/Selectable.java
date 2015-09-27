@@ -4,7 +4,7 @@ package com.dwdm.textselection.selection;
  * Created by a.kapitonov on 22.01.2015.
  */
 public interface Selectable {
-    int getOffsetForPosition(int x, int y, boolean correctY);
+    int getOffsetForPosition(int x, int y);
     int getVisibility();
     CharSequence getText();
     void setText(CharSequence text);

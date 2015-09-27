@@ -39,7 +39,7 @@ public class SelectableTextView extends TextView implements Selectable {
     }
 
     @Override
-    public int getOffsetForPosition(int x, int y, boolean correctY) {
+    public int getOffsetForPosition(int x, int y) {
         if (getLayout() == null) return -1;
 
         final int line = getLineAtCoordinate(y);

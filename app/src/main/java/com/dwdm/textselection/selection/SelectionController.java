@@ -93,15 +93,15 @@ public class SelectionController {
                 selectableViewGroup.getLocationOnScreen(location);
                 if (top <= y && bottom >= y) {
                     if (left <= x && right >= x) {
-                        pos = stv.getOffsetForPosition((int) (x - left), (int) (y - top), true);
+                        pos = stv.getOffsetForPosition((int) (x - left), (int) (y - top));
                         cursorPos = totalPos + pos;
                         break;
                     } else if (x < left) {
-                        pos = stv.getOffsetForPosition(FIRST_SYMBOL, (int) (y - top), true);
+                        pos = stv.getOffsetForPosition(FIRST_SYMBOL, (int) (y - top));
                         cursorPos = totalPos + pos;
                         break;
                     } else if (x > right) {
-                        pos = stv.getOffsetForPosition(LAST_SYMBOL, (int) (y - top), true);
+                        pos = stv.getOffsetForPosition(LAST_SYMBOL, (int) (y - top));
                         cursorPos = totalPos + pos;
                         break;
                     }
@@ -256,7 +256,7 @@ public class SelectionController {
                 int evX = (int) (e.getX() + location[0]);
                 int evY = (int) (e.getY() + location[1]);
                 if (selectable.isInside(evX, evY)) {
-                    pos = selectable.getOffsetForPosition(evX - left, evY - top, false);
+                    pos = selectable.getOffsetForPosition(evX - left, evY - top);
                     text = selectable.getText().toString();
                     break;
                 }
