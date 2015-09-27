@@ -2,16 +2,44 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <com.dwdm.textselection.selection.SelectableTextView
-        android:id="@+id/text_view2"
-        android:text="asdasdsad sad sad asd sadwqeqesda cx dqsd asd as dasd ad asdas dsa\nsadasdsadasdasdasdlaah jlahlfj hadlgha ljdhglja hd"
-        android:layout_below="@+id/text_view"
+
+    <RelativeLayout
+        android:id="@+id/cat_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/image_cat"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_above="@+id/caption_text_view"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/cat" />
+
+        <com.dwdm.textselection.selection.SelectableTextView
+            android:id="@+id/text_view2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/image_cat"
+            android:text="@string/sample_text1" />
+
+        <com.dwdm.textselection.selection.SelectableTextView
+            android:id="@+id/caption_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/text_view2"
+            android:layout_alignLeft="@id/image_cat"
+            android:layout_alignParentRight="true"
+            android:gravity="center"
+            android:text="@string/caption_text" />
+    </RelativeLayout>
 
     <com.dwdm.textselection.selection.SelectableTextView
-        android:id="@+id/text_view"
-        android:layout_alignParentTop="true"
+        android:id="@+id/text_view1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cat_layout"
+        android:text="@string/sample_text2" />
+
+
 </RelativeLayout>

@@ -21,7 +21,9 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = ">>>>>";
     private SelectableRecyclerView recyclerView;
-    private String sampleText;
+    private String sampleText1;
+    private String sampleText2;
+    private String sampleCation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +33,9 @@ public class MainActivity extends AppCompatActivity {
         LinearLayoutManager layout = new SelectableLayoutManager(this);
         layout.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(layout);
-        sampleText = getString(R.string.sample_text);
+        sampleText1 = getString(R.string.sample_text1);
+        sampleText2 = getString(R.string.sample_text2);
+        sampleCation = getString(R.string.caption_text);
         recyclerView.setAdapter(adapter);
 
         recyclerView.setSelectionCallback(new SelectionCallback() {
@@ -55,9 +59,13 @@ public class MainActivity extends AppCompatActivity {
         }
 
         @Override
-        public void onBindViewHolder(VHolder viewHolder, int i) {
-            viewHolder.textView.setText(sampleText);
-            viewHolder.textView.setKey(" pos: "+i+sampleText);
+        public void onBindViewHolder(VHolder viewHolder, int position) {
+            viewHolder.text_view1.setText(sampleText1);
+            viewHolder.text_view1.setKey(" pos: " + position + sampleText1);
+            viewHolder.text_view2.setText(sampleText2);
+            viewHolder.text_view2.setKey(" pos: " + position + sampleText2);
+            viewHolder.caption_text_view.setText(sampleCation);
+            viewHolder.caption_text_view.setKey(" pos: " + position + sampleCation);
         }
 
         @Override
@@ -69,11 +77,15 @@ public class MainActivity extends AppCompatActivity {
     };
     class VHolder extends RecyclerView.ViewHolder {
 
-        SelectableTextView textView;
+        SelectableTextView text_view2;
+        SelectableTextView text_view1;
+        SelectableTextView caption_text_view;
 
         public VHolder(View itemView) {
             super(itemView);
-            textView = (SelectableTextView) itemView.findViewById(R.id.text_view);
+            text_view2 = (SelectableTextView) itemView.findViewById(R.id.text_view2);
+            text_view1 = (SelectableTextView) itemView.findViewById(R.id.text_view1);
+            caption_text_view = (SelectableTextView) itemView.findViewById(R.id.caption_text_view);
 
         }
     }
